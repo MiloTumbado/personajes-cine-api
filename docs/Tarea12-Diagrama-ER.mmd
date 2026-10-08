@@ -1,0 +1,16 @@
+erDiagram
+ CHARACTER ||--o{ CHARACTER_PRODUCTION : aparece
+ PRODUCTION ||--o{ CHARACTER_PRODUCTION : contiene
+ CHARACTER { bigint id PK
+ string name
+ string picture
+ text description }
+ CHARACTER_PRODUCTION { bigint character_id PK,FK
+ bigint production_id PK,FK }
+ PRODUCTION { bigint id PK
+ string name
+ string type
+ string classification
+ date release_date
+ text review
+ int season }
